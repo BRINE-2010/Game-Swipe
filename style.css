@@ -7,7 +7,7 @@ body, html {
     font-family: 'Segoe UI', Roboto, sans-serif; 
 }
 
-/* --- 1. MENU SCREEN (Name at Top, Buttons Below) --- */
+/* --- 1. MENU SCREEN --- */
 #menu-screen { 
     width: 100%; height: 100%; 
     position: relative; 
@@ -78,10 +78,10 @@ body, html {
     padding: 0 15px;
     background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
     z-index: 1000;
+    pointer-events: none; /* ALLOWS TOUCH TO PASS THROUGH TO THE SCROLL CONTAINER */
 }
 
-/* SLEEK SEARCH BAR */
-#search-container { flex: 1; display: flex; justify-content: center; }
+#search-container { flex: 1; display: flex; justify-content: center; pointer-events: none; }
 
 .search-box-wrapper {
     display: flex; 
@@ -93,6 +93,7 @@ body, html {
     border: 1px solid rgba(255,255,255,0.1);
     overflow: hidden; 
     height: 40px;
+    pointer-events: auto; /* RE-ENABLES TOUCH FOR THE BOX ITSELF */
 }
 
 #gameSearch { 
@@ -105,7 +106,6 @@ body, html {
     font-weight: bold; cursor: pointer; font-size: 0.8rem;
 }
 
-/* EXIT BUTTON */
 #back-btn { 
     width: 40px; height: 40px; 
     border-radius: 50%; border: none;
@@ -115,15 +115,17 @@ body, html {
     display: flex; justify-content: center; align-items: center;
     backdrop-filter: blur(5px);
     margin-left: 10px;
+    pointer-events: auto; /* RE-ENABLES TOUCH FOR THE BACK BUTTON */
 }
 
-/* --- 3. THE FEED & SCALING FIX (The "No Cut-off" Secret) --- */
+/* --- 3. THE FEED & SCALING FIX --- */
 #scroll-container { 
     width: 100%; 
     height: 100dvh; 
-    overflow-y: scroll; 
+    overflow-y: auto; 
     scroll-snap-type: y mandatory; 
     scrollbar-width: none; 
+    -webkit-overflow-scrolling: touch; /* SMOOTH BOUNCY SCROLL FOR MOBILE */
 }
 #scroll-container::-webkit-scrollbar { display: none; }
 
@@ -133,10 +135,24 @@ body, html {
     scroll-snap-align: start; 
     display: flex; 
     flex-direction: column;
-    justify-content: flex-end; /* Pushes game to bottom to avoid header */
+    justify-content: flex-end; 
     align-items: center; 
-    padding-bottom: 10px; /* Small gap at bottom */
+    padding-bottom: 10px; 
+    position: relative; /* REQUIRED FOR THE INVISIBLE GUTTERS */
+    touch-action: pan-y; /* HELPS MOBILE BROWSER UNDERSTAND VERTICAL DRAG */
 }
+
+/* INVISIBLE SIDE GUTTERS (Thumb Grips for Scrolling) */
+.game-slot::before, .game-slot::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 25px; /* Adjust this if you need more "grip" space */
+    height: 100%;
+    z-index: 10;
+}
+.game-slot::before { left: 0; }
+.game-slot::after { right: 0; }
 
 iframe { 
     width: 98vw; 
@@ -145,6 +161,7 @@ iframe {
     border: 1px solid rgba(0, 242, 255, 0.3);
     box-shadow: 0 0 30px rgba(0,0,0,0.8); 
     background: #000;
+    z-index: 1;
 }
 
 /* --- 4. LANDSCAPE WARNING --- */
@@ -157,12 +174,11 @@ iframe {
     text-align: center; padding: 20px;
 }
 
-/* This shows the warning ONLY on mobile when they try to go landscape */
 @media (max-width: 768px) and (orientation: landscape) { 
     #rotate-device { display: flex; } 
 }
 
-/* --- 5. MOBILE SPECIFIC TWEAKS (For Tablets/Small Phones) --- */
+/* --- 5. MOBILE SPECIFIC TWEAKS --- */
 @media (max-height: 500px) {
     .menu-header h1 { font-size: 3.5rem; margin-bottom: 20px; }
     .search-box-wrapper { max-width: 300px; height: 35px; }

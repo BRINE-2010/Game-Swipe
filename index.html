@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GAME SCROLL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="rotate-device">
+        <div class="rotate-content">
+            <p>Please rotate your device to <b>Portrait mode</b> for the best experience!</p>
+        </div>
+    </div>
+
+    <div id="menu-screen">
+        <img src="YOUR_IMAGE_URL_HERE" id="menu-bg" alt="Background">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h1>GAME SCROLL</h1>
+            </div>
+            <div class="menu-actions">
+                <button class="play-btn" onclick="startScrolling()">PLAY NOW</button>
+                <button class="add-btn" onclick="window.location.href='mailto:your-email@example.com'">Add Your Game</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-screen" style="display: none;">
+        <div class="top-nav">
+            <div id="search-container">
+                <div class="search-box-wrapper">
+                    <input type="text" id="gameSearch" placeholder="Search for a game..." onkeyup="if(event.key==='Enter') searchGames()">
+                    <button id="search-btn" onclick="searchGames()">SEARCH</button>
+                </div>
+            </div>
+            <button onclick="backToMenu()" id="back-btn">✕</button>
+        </div>
+        
+        <div id="scroll-container">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

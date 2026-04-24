@@ -13,8 +13,8 @@ const allGames = [
         bg: "https://example.com/image.jpg" 
     },
     { 
-        name: "Stickman rush", 
-        url: "https://html5.gamemonetize.co/34nwkjqmsl1gc36sefoqb52hxd2570ub/", 
+        name: "Going roll balls", 
+        url: "https://html5.gamemonetize.co/ozbxx1p7gw04eauwlp3vqf2ejimwkfqc/", 
         bg: "https://example.com/image.jpg" 
     },
     { 
@@ -23,18 +23,33 @@ const allGames = [
         bg: "https://example.com/image.jpg" 
     },
     { 
-        name: "Noob VS Zombies 2", 
-        url: "https://html5.gamemonetize.co/mjcgbzq9z7xfzzwgsb15a1g3vn3r4m8t/", 
+        name: "Falling Ball", 
+        url: "https://html5.gamemonetize.co/zqcxs1myrlq2m2rc6tz45jbxfdvs9n06/", 
         bg: "https://example.com/image.jpg" 
     },
     { 
-        name: "67 tap", 
-        url: "https://html5.gamedistribution.com/f078134f39634ca78dcd4a8479a314a2/?gd_sdk_referrer_url=https://brine-2010.github.io/Game-Swipe/", 
+        name: "Santa rope", 
+        url: "https://html5.gamemonetize.co/w6npanu26kj9ieqeg5kclckgedc79kyw/", 
         bg: "https://example.com/image.jpg" 
     },
     { 
-        name: "FootBall", 
-        url: "https://html5.gamedistribution.com/4a9c7ad53f7c48678b3b848390a62daa/?gd_sdk_referrer_url=https://brine-2010.github.io/Game-Swipe/", 
+        name: "Angry Birds", 
+        url: "https://html5.gamemonetize.co/ndzip7ly7bm2y13d6avy9v253zn81hk8/", 
+        bg: "https://example.com/image.jpg" 
+    },
+     { 
+        name: "Flappy Dunk", 
+        url: "https://html5.gamemonetize.co/3bluguo5w49s3ybpsd1u7h4jk7xmrtjv/", 
+        bg: "https://example.com/image.jpg" 
+    },
+     { 
+        name: "Ludo", 
+        url: "https://html5.gamemonetize.co/luqaexjt6itsaz00dfeooewpgm14xs9j/", 
+        bg: "https://example.com/image.jpg" 
+    },
+     { 
+        name: "Chess Master", 
+        url: "https://html5.gamemonetize.co/0j27h8fp1no93ybdnpp61khjmpgubcqb/", 
         bg: "https://example.com/image.jpg" 
     },
 ];

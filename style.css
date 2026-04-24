@@ -1,0 +1,197 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body, html { 
+    width: 100%; height: 100%; 
+    overflow: hidden; 
+    background: #0d0d0d; 
+    font-family: 'Segoe UI', Roboto, sans-serif; 
+}
+
+/* --- 1. MENU SCREEN --- */
+#menu-screen { 
+    width: 100%; height: 100%; 
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+    text-align: center;
+}
+
+#menu-bg { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.4); }
+
+.menu-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-header h1 { 
+    font-size: 5rem; 
+    color: #fff; 
+    text-shadow: 0 0 25px #00f2ff, 0 0 50px rgba(0, 242, 255, 0.5); 
+    margin-bottom: 40px;
+    letter-spacing: 5px;
+}
+
+.menu-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto; 
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-actions button {
+    width: 100%;
+    padding: 18px; 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    cursor: pointer; 
+    border-radius: 12px; 
+    border: none; 
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.play-btn { 
+    background: linear-gradient(45deg, #00f2ff, #0062ff); 
+    color: white; 
+    box-shadow: 0 5px 20px rgba(0, 242, 255, 0.4); 
+}
+
+.add-btn { 
+    background: rgba(255, 255, 255, 0.1); 
+    color: #fff; 
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.menu-actions button:hover { transform: scale(1.05); filter: brightness(1.2); }
+
+/* --- 2. GAME SCREEN & TOP NAVIGATION --- */
+#game-screen { width: 100%; height: 100dvh; background: #000; position: relative; }
+
+.top-nav {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+    z-index: 1000;
+    pointer-events: none; /* ALLOWS TOUCH TO PASS THROUGH TO THE SCROLL CONTAINER */
+}
+
+#search-container { flex: 1; display: flex; justify-content: center; pointer-events: none; }
+
+.search-box-wrapper {
+    display: flex; 
+    width: 90%; 
+    max-width: 500px; 
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px); 
+    border-radius: 8px; 
+    border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden; 
+    height: 40px;
+    pointer-events: auto; /* RE-ENABLES TOUCH FOR THE BOX ITSELF */
+}
+
+#gameSearch { 
+    flex: 1; padding: 0 15px; background: transparent; border: none; 
+    color: white; outline: none; font-size: 0.9rem;
+}
+
+#search-btn { 
+    padding: 0 20px; background: #00f2ff; border: none; color: #000; 
+    font-weight: bold; cursor: pointer; font-size: 0.8rem;
+}
+
+#back-btn { 
+    width: 40px; height: 40px; 
+    border-radius: 50%; border: none;
+    background: rgba(255,255,255,0.15); 
+    color: white; font-size: 1.4rem;
+    cursor: pointer; 
+    display: flex; justify-content: center; align-items: center;
+    backdrop-filter: blur(5px);
+    margin-left: 10px;
+    pointer-events: auto; /* RE-ENABLES TOUCH FOR THE BACK BUTTON */
+}
+
+/* --- 3. THE FEED & SCALING FIX --- */
+#scroll-container { 
+    width: 100%; 
+    height: 100dvh; 
+    overflow-y: auto; 
+    scroll-snap-type: y mandatory; 
+    scrollbar-width: none; 
+    -webkit-overflow-scrolling: touch; /* SMOOTH BOUNCY SCROLL FOR MOBILE */
+}
+#scroll-container::-webkit-scrollbar { display: none; }
+
+.game-slot { 
+    width: 100vw; 
+    height: 100dvh; 
+    scroll-snap-align: start; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: center; 
+    padding-bottom: 10px; 
+    position: relative; /* REQUIRED FOR THE INVISIBLE GUTTERS */
+    touch-action: pan-y; /* HELPS MOBILE BROWSER UNDERSTAND VERTICAL DRAG */
+}
+
+/* INVISIBLE SIDE GUTTERS (Thumb Grips for Scrolling) */
+.game-slot::before, .game-slot::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 25px; /* Adjust this if you need more "grip" space */
+    height: 100%;
+    z-index: 10;
+}
+.game-slot::before { left: 0; }
+.game-slot::after { right: 0; }
+
+iframe { 
+    width: 98vw; 
+    height: 85vh;
+    border-radius: 20px; 
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0,0,0,0.8); 
+    background: #000;
+    z-index: 1;
+}
+
+/* --- 4. LANDSCAPE WARNING --- */
+#rotate-device { 
+    display: none; 
+    position: fixed; inset: 0; 
+    background: #0d0d0d; color: #fff; 
+    z-index: 9999; 
+    justify-content: center; align-items: center; 
+    text-align: center; padding: 20px;
+}
+
+@media (max-width: 768px) and (orientation: landscape) { 
+    #rotate-device { display: flex; } 
+}
+
+/* --- 5. MOBILE SPECIFIC TWEAKS --- */
+@media (max-height: 500px) {
+    .menu-header h1 { font-size: 3.5rem; margin-bottom: 20px; }
+    .search-box-wrapper { max-width: 300px; height: 35px; }
+    .top-nav { height: 50px; }
+    iframe { height: calc(100dvh - 55px); }
+}

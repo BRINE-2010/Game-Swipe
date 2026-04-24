@@ -17,6 +17,26 @@ const allGames = [
         url: "https://html5.gamemonetize.co/34nwkjqmsl1gc36sefoqb52hxd2570ub/", 
         bg: "https://example.com/image.jpg" 
     },
+    { 
+        name: "Bullet shoot", 
+        url: "https://html5.gamemonetize.co/tjsii5r6qlrfyf34b076syz13lzeq0x1/", 
+        bg: "https://example.com/image.jpg" 
+    },
+    { 
+        name: "Noob VS Zombies 2", 
+        url: "https://html5.gamemonetize.co/mjcgbzq9z7xfzzwgsb15a1g3vn3r4m8t/", 
+        bg: "https://example.com/image.jpg" 
+    },
+    { 
+        name: "67 tap", 
+        url: "https://html5.gamedistribution.com/f078134f39634ca78dcd4a8479a314a2/?gd_sdk_referrer_url=https://brine-2010.github.io/Game-Swipe/", 
+        bg: "https://example.com/image.jpg" 
+    },
+    { 
+        name: "FootBall", 
+        url: "https://html5.gamedistribution.com/4a9c7ad53f7c48678b3b848390a62daa/?gd_sdk_referrer_url=https://brine-2010.github.io/Game-Swipe/", 
+        bg: "https://example.com/image.jpg" 
+    },
 ];
 
 // 2. THE ACTUAL SHUFFLE FUNCTION (The "Secret Sauce")

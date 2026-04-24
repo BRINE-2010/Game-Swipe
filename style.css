@@ -140,8 +140,8 @@ body, html {
 
 iframe { 
     width: 98vw; 
-    height: calc(100dvh - 70px); /* Subtracts the top nav height + gap */
-    border-radius: 12px; 
+    height: 85vh;
+    border-radius: 20px; 
     border: 1px solid rgba(0, 242, 255, 0.3);
     box-shadow: 0 0 30px rgba(0,0,0,0.8); 
     background: #000;
@@ -157,11 +157,14 @@ iframe {
     text-align: center; padding: 20px;
 }
 
-@media (orientation: portrait) { #rotate-device { display: flex; } }
+/* This shows the warning ONLY on mobile when they try to go landscape */
+@media (max-width: 768px) and (orientation: landscape) { 
+    #rotate-device { display: flex; } 
+}
 
 /* --- 5. MOBILE SPECIFIC TWEAKS (For Tablets/Small Phones) --- */
 @media (max-height: 500px) {
-    .menu-header h1 { font-size: 2.5rem; margin-bottom: 20px; }
+    .menu-header h1 { font-size: 3.5rem; margin-bottom: 20px; }
     .search-box-wrapper { max-width: 300px; height: 35px; }
     .top-nav { height: 50px; }
     iframe { height: calc(100dvh - 55px); }

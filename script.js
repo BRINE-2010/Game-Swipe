@@ -55,7 +55,6 @@ const allGames = [
 ];
 
 // 2. THE ACTUAL SHUFFLE FUNCTION (The "Secret Sauce")
-// This randomly reorders your games list every time you start
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
     while (currentIndex != 0) {
@@ -71,7 +70,6 @@ function startScrolling() {
     document.getElementById('menu-screen').style.display = 'none';
     document.getElementById('game-screen').style.display = 'block';
     
-    // Create a shuffled version of your list
     const shuffledList = shuffle([...allGames]); 
     
     renderGames(shuffledList); 
@@ -86,11 +84,9 @@ function renderGames(gameArray) {
     gameArray.forEach((game, index) => {
         const slot = document.createElement('div');
         slot.className = 'game-slot';
-        // Applying the background preview
         slot.style.backgroundImage = `radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%), url('${game.bg}')`;
         slot.dataset.name = game.name.toLowerCase();
         
-        // Creating the frame
         slot.innerHTML = `<iframe src="${game.url}" id="game-frame-${index}" allowfullscreen loading="lazy"></iframe>`;
         container.appendChild(slot);
     });
@@ -105,7 +101,6 @@ function searchGames() {
         let name = slots[i].dataset.name;
         slots[i].style.display = name.includes(input) ? "flex" : "none";
     }
-    // Scroll back to top after searching
     document.getElementById('scroll-container').scrollTop = 0;
 }
 
@@ -129,6 +124,22 @@ function initRestartObserver() {
 function backToMenu() {
     document.getElementById('menu-screen').style.display = 'flex';
     document.getElementById('game-screen').style.display = 'none';
-    // Clear container to save battery/RAM
     document.getElementById('scroll-container').innerHTML = "";
+}
+
+// --- 8. ABOUT MODAL LOGIC ---
+function showAbout() {
+    document.getElementById("aboutModal").style.display = "flex";
+}
+
+function closeAbout() {
+    document.getElementById("aboutModal").style.display = "none";
+}
+
+// Close the modal if the user clicks the dark background area
+window.onclick = function(event) {
+    const modal = document.getElementById("aboutModal");
+    if (event.target == modal) {
+        closeAbout();
+    }
 }

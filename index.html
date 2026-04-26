@@ -16,14 +16,18 @@
 
     <div id="menu-screen">
         <img src="BG-SWIPE.png" id="menu-bg" alt="Background">
+        
         <div class="menu-content">
             <div class="menu-header">
-            </div>
+                </div>
+            
             <div class="menu-actions">
                 <button class="play-btn" onclick="startScrolling()">PLAY NOW</button>
                 <button class="add-btn" onclick="window.location.href='mailto:your-email@example.com'">Add Your Game</button>
             </div>
         </div>
+
+        <button class="about-btn" onclick="showAbout()">About Game</button>
     </div>
 
     <div id="game-screen" style="display: none;">
@@ -41,6 +45,33 @@
             </div>
     </div>
 
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeAbout()">&times;</span>
+            <h2>ABOUT GAME SWIPE</h2>
+            <p>Welcome to the ultimate hub for instant gaming. Swipe through a curated collection of the best web games, handpicked for speed and fun.</p>
+            <p><b>Created by:</b> A Future Billionaire</p>
+            <p><b>Version:</b> 1.0.4</p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+
+    <script>
+        function showAbout() {
+            document.getElementById("aboutModal").style.display = "flex";
+        }
+        function closeAbout() {
+            document.getElementById("aboutModal").style.display = "none";
+        }
+        // Close if user clicks outside the box
+        window.onclick = function(event) {
+            let modal = document.getElementById("aboutModal");
+            if (event.target == modal) {
+                closeAbout();
+            }
+        }
+    </script>
+
 </body>
 </html>

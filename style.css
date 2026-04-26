@@ -17,7 +17,7 @@ body, html {
     justify-content: center; 
     align-items: center; 
     overflow: hidden;
-    background-color: #000; /* Fallback if image fails */
+    background-color: #000; 
 }
 
 #menu-bg { 
@@ -27,17 +27,20 @@ body, html {
     width: 100%; 
     height: 100%; 
     object-fit: cover; 
-    transform: translate(-50%, -50%); /* Perfectly centers the image */
-    z-index: 1; /* Moves it to the first layer */
+    transform: translate(-50%, -50%); 
+    z-index: 1; 
     filter: brightness(0.4); 
 }
 
 .menu-content {
     position: relative;
-    z-index: 10; /* Forces text and buttons to stay ON TOP of the image */
+    z-index: 10; 
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+    justify-content: flex-end; /* Pushes buttons to the bottom */
+    padding-bottom: 12vh; /* Adjust this to move buttons higher or lower */
 }
 
 .menu-header {
@@ -93,6 +96,61 @@ body, html {
 
 .menu-actions button:hover { transform: scale(1.05); filter: brightness(1.2); }
 
+/* --- ABOUT BUTTON & MODAL --- */
+.about-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    z-index: 20;
+    transition: 0.3s;
+}
+
+.about-btn:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-2px); }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: rgba(25, 25, 25, 0.95);
+    padding: 30px;
+    border: 1px solid #00f2ff;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 400px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+    position: relative;
+}
+
+.modal-content h2 { color: #00f2ff; margin-bottom: 15px; }
+.modal-content p { line-height: 1.6; margin-bottom: 10px; font-size: 0.9rem; }
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+}
+
 /* --- 2. GAME SCREEN & TOP NAVIGATION --- */
 #game-screen { width: 100%; height: 100dvh; background: #000; position: relative; }
 
@@ -107,7 +165,7 @@ body, html {
     padding: 0 15px;
     background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
     z-index: 1000;
-    pointer-events: none; /* ALLOWS TOUCH TO PASS THROUGH TO THE SCROLL CONTAINER */
+    pointer-events: none; 
 }
 
 #search-container { flex: 1; display: flex; justify-content: center; pointer-events: none; }
@@ -122,7 +180,7 @@ body, html {
     border: 1px solid rgba(255,255,255,0.1);
     overflow: hidden; 
     height: 40px;
-    pointer-events: auto; /* RE-ENABLES TOUCH FOR THE BOX ITSELF */
+    pointer-events: auto; 
 }
 
 #gameSearch { 
@@ -144,7 +202,7 @@ body, html {
     display: flex; justify-content: center; align-items: center;
     backdrop-filter: blur(5px);
     margin-left: 10px;
-    pointer-events: auto; /* RE-ENABLES TOUCH FOR THE BACK BUTTON */
+    pointer-events: auto; 
 }
 
 /* --- 3. THE FEED & SCALING FIX --- */
@@ -154,7 +212,7 @@ body, html {
     overflow-y: auto; 
     scroll-snap-type: y mandatory; 
     scrollbar-width: none; 
-    -webkit-overflow-scrolling: touch; /* SMOOTH BOUNCY SCROLL FOR MOBILE */
+    -webkit-overflow-scrolling: touch; 
 }
 #scroll-container::-webkit-scrollbar { display: none; }
 
@@ -167,16 +225,15 @@ body, html {
     justify-content: flex-end; 
     align-items: center; 
     padding-bottom: 10px; 
-    position: relative; /* REQUIRED FOR THE INVISIBLE GUTTERS */
-    touch-action: pan-y; /* HELPS MOBILE BROWSER UNDERSTAND VERTICAL DRAG */
+    position: relative; 
+    touch-action: pan-y; 
 }
 
-/* INVISIBLE SIDE GUTTERS (Thumb Grips for Scrolling) */
 .game-slot::before, .game-slot::after {
     content: "";
     position: absolute;
     top: 0;
-    width: 25px; /* Adjust this if you need more "grip" space */
+    width: 25px; 
     height: 100%;
     z-index: 10;
 }
@@ -213,4 +270,5 @@ iframe {
     .search-box-wrapper { max-width: 300px; height: 35px; }
     .top-nav { height: 50px; }
     iframe { height: calc(100dvh - 55px); }
+    .menu-content { padding-bottom: 5vh; }
 }

@@ -3,9 +3,9 @@
 const allGames = [
     // --- ADDING GAME LINKS BELOW THIS LINE ---
     { 
-        name: "Pop Ballon", 
-        url: "https://html5.gamemonetize.co/kapfvra3zri06z6ohm6wm92s9yiwtpbi/", 
-        bg: "https://example.com/image.jpg" 
+        name: "Three Cups Game",
+        url: "https://play.gamepix.com/three-cups-game/embed?sid=77517", 
+        bg: "https://img.gamepix.com/games/three-cups-game/icon/three-cups-game.png?w=105" 
     },
     { 
         name: "Going roll balls", 

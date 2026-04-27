@@ -1,12 +1,7 @@
 // 1. YOUR GAME DATABASE (Add your manual links here)
 // Follow this format: { name: "Game Name", url: "The Link", bg: "The Image Link" }
 const allGames = [
-    { 
-        name: "Tic Tac Toe", 
-        url: "./TicTacToe/index.html", 
-        bg: "https://images.unsplash.com/photo-1611996591156-66715d6018a1?q=80&w=2070&auto=format&fit=crop" 
-    },
-    // --- ADD YOUR GAME MONETIZE LINKS BELOW THIS LINE ---
+    // --- ADDING GAME LINKS BELOW THIS LINE ---
     { 
         name: "Pop Ballon", 
         url: "https://html5.gamemonetize.co/kapfvra3zri06z6ohm6wm92s9yiwtpbi/", 

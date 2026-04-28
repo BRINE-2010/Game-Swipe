@@ -8,44 +8,54 @@ const allGames = [
         bg: "https://img.gamepix.com/games/three-cups-game/icon/three-cups-game.png?w=105" 
     },
     { 
-        name: "Going roll balls", 
-        url: "https://html5.gamemonetize.co/ozbxx1p7gw04eauwlp3vqf2ejimwkfqc/", 
-        bg: "https://example.com/image.jpg" 
+        name: "TenTrix", 
+        url: "https://play.gamepix.com/tentrix/embed?sid=77517", 
+        bg: "https://img.gamepix.com/games/tentrix/icon/tentrix.png?w=105" 
     },
     { 
-        name: "Bullet shoot", 
-        url: "https://html5.gamemonetize.co/tjsii5r6qlrfyf34b076syz13lzeq0x1/", 
-        bg: "https://example.com/image.jpg" 
+        name: "Slope Racing 3D", 
+        url: "https://play.gamepix.com/slope-racing-3d/embed?sid=77517", 
+        bg: "https://img.gamepix.com/games/slope-racing-3d/icon/slope-racing-3d.png?w=105" 
     },
     { 
-        name: "Falling Ball", 
-        url: "https://html5.gamemonetize.co/zqcxs1myrlq2m2rc6tz45jbxfdvs9n06/", 
-        bg: "https://example.com/image.jpg" 
+        name: "Kobadoo Flags", 
+        url: "https://play.gamepix.com/kobadoo-flags/embed?sid=77517", 
+        bg: "https://img.gamepix.com/games/kobadoo-flags/icon/kobadoo-flags.png?w=105" 
     },
     { 
-        name: "Santa rope", 
-        url: "https://html5.gamemonetize.co/w6npanu26kj9ieqeg5kclckgedc79kyw/", 
-        bg: "https://example.com/image.jpg" 
+        name: "Mincraft Cube Puzzle", 
+        url: "https://play.gamepix.com/minecraft-cube-puzzle/embed?sid=77517", 
+        bg: "https://img.gamepix.com/games/minecraft-cube-puzzle/icon/minecraft-cube-puzzle.png?w=105" 
     },
     { 
-        name: "Angry Birds", 
-        url: "https://html5.gamemonetize.co/ndzip7ly7bm2y13d6avy9v253zn81hk8/", 
-        bg: "https://example.com/image.jpg" 
+        name: "Angry Flappy", 
+        url: "https://play.gamepix.com/angry-flappy/embed?sid=1", 
+        bg: "https://img.gamepix.com/games/angry-flappy/icon/angry-flappy.png?w=105" 
     },
      { 
-        name: "Flappy Dunk", 
-        url: "https://html5.gamemonetize.co/3bluguo5w49s3ybpsd1u7h4jk7xmrtjv/", 
-        bg: "https://example.com/image.jpg" 
+        name: "Flappy Bird 2D Game", 
+        url: "https://play.gamepix.com/flappy-bird-2d-game/embed?sid=1", 
+        bg: "https://img.gamepix.com/games/flappy-bird-2d-game/icon/flappy-bird-2d-game.png?w=105" 
     },
      { 
-        name: "Ludo", 
-        url: "https://html5.gamemonetize.co/luqaexjt6itsaz00dfeooewpgm14xs9j/", 
-        bg: "https://example.com/image.jpg" 
+        name: "Ludo Legend", 
+        url: "https://play.gamepix.com/ludo-legend/embed?sid=1", 
+        bg: "https://img.gamepix.com/games/ludo-legend/icon/ludo-legend.png?w=105" 
     },
      { 
-        name: "Chess Master", 
-        url: "https://html5.gamemonetize.co/0j27h8fp1no93ybdnpp61khjmpgubcqb/", 
-        bg: "https://example.com/image.jpg" 
+        name: "Master Chess Multiplayer", 
+        url: "https://play.gamepix.com/master-chess-multiplayer/embed?sid=1", 
+        bg: "https://img.gamepix.com/games/master-chess-multiplayer/icon/master-chess-multiplayer.png?w=105" 
+    },
+    { 
+        name: "Minecraft Drift Simulator", 
+        url: "https://play.gamepix.com/minecraft-drift-simulator/embed?sid=77517", 
+        bg: "https://img.gamepix.com/games/minecraft-drift-simulator/icon/minecraft-drift-simulator.png?w=105" 
+    },
+    { 
+        name: "MR RACER - Car Racing", 
+        url: "https://play.gamepix.com/mr-racer-car-racing-game/embed?sid=1", 
+        bg: "https://img.gamepix.com/games/mr-racer-car-racing-game/icon/mr-racer-car-racing-game.png?w=105" 
     },
 ];
 
